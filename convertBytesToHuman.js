@@ -22,7 +22,7 @@ export default function convertBytesToHuman(bytes) {
 
   let res = false;
   
-  if ((typeof bytes == "number" )&&( bytes > 0 )){
+  if ((Number.isInteger(bytes))&&( bytes > 0 )&&(typeof bytes != "boolean")){
     let k = Math.log(bytes)/Math.log(BYTES);
     k = k - k%1;
     
